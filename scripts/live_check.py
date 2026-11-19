@@ -1,6 +1,6 @@
 """Проверка обоих сценариев на настоящем Keitaro (нужен KEITARO_API_KEY в .env).
 
-    python -m scripts.live_check            # создаст кампанию test_khristoforov_live_<время>
+    python -m scripts.live_check            # создаст кампанию test_khristoforov_campaign_live_<время>
     python -m scripts.live_check --geo AU   # другое гео
 
 Ходит через HTTP API обёртки (как фронт), а результат каждого шага сверяет
@@ -61,7 +61,7 @@ step("для редактора есть три оффера", len(ids) >= 3, "�
 o1, o2, o3 = ids[:3]
 
 # ---------- часть 1
-name = f"live_{time.strftime('%Y%m%d_%H%M%S')}"
+name = f"campaign_live_{time.strftime('%Y%m%d_%H%M%S')}"
 r = client.post("/api/campaigns", json={"name": name, "geo": args.geo, "offer_id": o1})
 step("кампания создана", r.status_code == 201, r.text[:300])
 c = r.json()

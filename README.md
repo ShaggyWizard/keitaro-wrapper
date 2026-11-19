@@ -82,7 +82,7 @@ pytest
 
 На PostgreSQL: `TEST_DATABASE_URL=postgresql+psycopg://... pytest` (база будет очищена).
 
-Проверка на живом Keitaro (нужен ключ в `.env`, создаёт кампанию `<префикс>live_<время>` и оставляет её там; если аккаунту видно меньше трёх офферов — `--extra-offers 111,222` и `ALLOW_UNLISTED_OFFERS=true`):
+Проверка на живом Keitaro (нужен ключ в `.env`, создаёт кампанию `<префикс>campaign_live_<время>` и оставляет её там; если аккаунту видно меньше трёх офферов — `--extra-offers 111,222` и `ALLOW_UNLISTED_OFFERS=true`):
 
 ```bash
 python -m scripts.live_check
