@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.db
+.pytest_cache/
+.claude/
+ЗАДАНИЕ.md
+*.sqlite
+*.log
+.env.*
+!.env.example

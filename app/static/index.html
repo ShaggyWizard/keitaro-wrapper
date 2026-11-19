@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keitaro wrapper</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header>
+  <h1>Keitaro wrapper</h1>
+  <nav>
+    <button class="tab active" data-tab="create">Новая кампания</button>
+    <button class="tab" data-tab="editor">Редактор</button>
+  </nav>
+</header>
+
+<main>
+  <section id="create" class="panel">
+    <h2>New campaign</h2>
+    <form id="create-form">
+      <label>Name <span class="hint" id="prefix-hint"></span>
+        <input name="name" required placeholder="campaign1">
+      </label>
+      <label>Geo <span class="hint">поток 1 отправит эти страны на Google</span>
+        <input name="geo" required placeholder="MX,AU,RO">
+      </label>
+      <label>Offer <span class="hint">поиск по названию или ID</span>
+        <input name="offer" required list="offers-list" placeholder="начните вводить" autocomplete="off">
+      </label>
+      <div class="row3">
+        <label>Домен <select name="domain_id"></select></label>
+        <label>Группа <select name="group_id"></select></label>
+        <label>Источник <select name="source_id"></select></label>
+      </div>
+      <button type="submit" class="primary">Create</button>
+    </form>
+    <div id="create-result"></div>
+  </section>
+
+  <section id="editor" class="panel hidden">
+    <h2>Редактор кампании</h2>
+    <div class="toolbar">
+      <select id="campaign-select"></select>
+      <button id="fetch-btn" class="primary">Fetch streams</button>
+    </div>
+    <div id="streams"></div>
+  </section>
+</main>
+
+<datalist id="offers-list"></datalist>
+<div id="toast" class="hidden"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
